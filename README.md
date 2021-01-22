@@ -4,10 +4,10 @@
 **TOOLS AND EXPLANATIONS**
 
 The project has been prepared based on Cucumber BDD style. Maven build management tool is used in this project by Java (JDK8+) language. 
-In the project created by using the Page Object Design Pattern, the data were collected under the pages package. 
-Dependencies have been prepared under the pom.xml file. Webdriver Manager dependency was used from this project. 
-The project was tried to be controlled from the centre using config.properties and ConfigurationReader. 
-Driver based on Singleton Design Pattern was used and parallel testing was supported with driverPool. (In the pom.xml parallel,perCoreThreadCount,threadCountMethods)
+To reduce code duplication and to improve test maintenance,the project is created by using the Page Object Design Pattern so the data were collected under the different Java classes. It is like a class that mirrors the behavior and objects (Web elements) of a webpage from the application. 
+Dependencies have been prepared under the pom.xml file. Webdriver Manager dependency is used for this project. 
+In the project the data is stored in config.properties and to read that .properties file there is a class called ConfigurationReader. 
+Driver based on Singleton Design Pattern and to make it more efficient for parallel testing, InheritableThreadLocal class is used. Instead of singleton pattern specification we can now have seperate objects for each thread.
 There are also useful classes/methods inside Utilities package such as PasswordGenerator, BrowserUtils, EmailGenerator and so on.
 
 **Technology Stack**
