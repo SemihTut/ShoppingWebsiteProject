@@ -3,12 +3,13 @@
 
 **TOOLS AND EXPLANATIONS**
 
-The project has been prepared based on Cucumber BDD style. Maven build management tool is used in this project by Java (JDK8+) language. 
-To reduce code duplication and to improve test maintenance,the project is created by using the Page Object Design Pattern so the data were collected under the different Java classes. It is like a class that mirrors the behavior and objects (Web elements) of a webpage from the application. 
-Dependencies have been prepared under the pom.xml file. Webdriver Manager dependency is used for this project. 
-In the project the data is stored in config.properties and to read that .properties file there is a class called ConfigurationReader. 
-Driver based on Singleton Design Pattern and to make it more efficient for parallel testing, InheritableThreadLocal class is used. Instead of singleton pattern specification we can now have seperate objects for each thread.
-There are also useful classes/methods inside Utilities package such as PasswordGenerator, BrowserUtils, EmailGenerator and so on.
+- The project has been prepared based on Cucumber BDD style. Maven build management tool is used in this project by Java (JDK8+) language. 
+- To reduce code duplication and to improve test maintenance,the project is created by using the Page Object Design Pattern so the data were collected under the different Java classes. It is like a class that mirrors the behavior and objects (Web elements) of a webpage from the application. 
+- Dependencies have been prepared under the pom.xml file. Webdriver Manager dependency is used for this project. 
+- In the project the data is stored in config.properties file and to read that .properties file there is a class called ConfigurationReader. 
+- Driver based on Singleton Design Pattern and to make it more efficient for parallel testing, InheritableThreadLocal class is used. Instead of singleton pattern specification we can now have seperate objects for each thread.
+- There are also useful classes/methods inside Utilities package such as PasswordGenerator, BrowserUtils, EmailGenerator and so on.
+- There is also a FailedTestRunner class under runners package. So It runs automatically if test scenario is failed. It also stores the the number of the scenario to run later manually again.
 
 **Technology Stack**
 
@@ -44,7 +45,7 @@ There are also useful classes/methods inside Utilities package such as PasswordG
 ```
 -> target -> cucumber-html-reports > overview-steps.html (open with chrome option)
 ```
-2-) Second type of report, the project is run from Runner class, a Cucumber Report link is created in the IDE console automatically.
+2-) Second type of report, the project is run from CukesRunner class, a Cucumber Report link is created in the IDE console automatically.
 ```
 Sample link -> View your Cucumber Report at: (Works 24 hours later than it will delete automatically)
 ```
@@ -61,6 +62,9 @@ QA Automation Engineer
 
 https://www.linkedin.com/in/semihtut/
 www.semihtut.com
+
+
+
 
 
 
