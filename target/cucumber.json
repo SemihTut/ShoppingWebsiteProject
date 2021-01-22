@@ -1,0 +1,106 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 3311795700,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "the user is on the web-page",
+            "match": {
+              "location": "com.AlphaSense.step_definitions.LoginStepDefs.the_user_is_on_the_web_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-01-22T01:47:34.380Z",
+        "before": [
+          {
+            "result": {
+              "duration": 5604776800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.AlphaSense.step_definitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 7,
+        "name": "Login as a registered user",
+        "description": "",
+        "id": "users-should-be-able-to-create-a-new-account;login-as-a-registered-user",
+        "after": [
+          {
+            "result": {
+              "duration": 594168100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.AlphaSense.step_definitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1478056000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "the user enter email \"1sKvT@uR1.vONtD\" and password \"\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"1sKvT@uR1.vONtD\"",
+                  "offset": 21
+                },
+                {
+                  "val": "\"\"",
+                  "offset": 52
+                }
+              ],
+              "location": "com.AlphaSense.step_definitions.LoginStepDefs.the_user_enter_and(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 64932100,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "the user should be able to sigIn",
+            "match": {
+              "location": "com.AlphaSense.step_definitions.LoginStepDefs.the_user_should_be_able_to_sigIn()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@registeredUser"
+          }
+        ]
+      }
+    ],
+    "name": "Users should be able to create a new account",
+    "description": "",
+    "id": "users-should-be-able-to-create-a-new-account",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/LoginPage.feature",
+    "tags": []
+  }
+]
