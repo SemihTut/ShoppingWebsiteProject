@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.AlphaSense.runners.FailedTestRunner
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in com.AlphaSense.runners.FailedTestRunner
-initializationError(com.AlphaSense.runners.FailedTestRunner)  Time elapsed: 0.001 s  <<< ERROR!
-io.cucumber.core.exception.CucumberException: Failed to parse 'failedTest'
-Caused by: java.nio.file.NoSuchFileException: failedTest
-

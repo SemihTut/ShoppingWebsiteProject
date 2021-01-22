@@ -95,21 +95,6 @@ public class BrowserUtils {
         }
     }
 
-    /**
-     * Verifies whether the element matching the provided locator is NOT displayed on page
-     *
-     * @param by
-     * @throws AssertionError the element matching the provided locator is displayed
-     */
-    public static void verifyElementNotDisplayed(By by) {
-        try {
-            Assert.assertFalse("Element should not be visible: " + by, Driver.get().findElement(by).isDisplayed());
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-
-        }
-    }
-
 
     /**
      * Verifies whether the element is displayed on page
@@ -117,6 +102,7 @@ public class BrowserUtils {
      * @param element
      * @throws AssertionError if the element is not found or not displayed
      */
+
     public static void verifyElementDisplayed(WebElement element) {
         try {
             Assert.assertTrue("Element not visible: " + element, element.isDisplayed());
@@ -126,7 +112,6 @@ public class BrowserUtils {
 
         }
     }
-
 
 
     /**
@@ -149,15 +134,6 @@ public class BrowserUtils {
         ((JavascriptExecutor) Driver.get()).executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
-    /**
-     * Performs double click action on an element
-     *
-     * @param element
-     */
-    public static void doubleClick(WebElement element) {
-        new Actions(Driver.get()).doubleClick(element).build().perform();
-    }
-
 
     /**
      * Checks or unchecks given checkbox
@@ -176,53 +152,4 @@ public class BrowserUtils {
             }
         }
     }
-
-    /**
-     * attempts to click on provided element until given time runs out
-     *
-     * @param element
-     * @param timeout
-     */
-    public static void clickWithTimeOut(WebElement element, int timeout) {
-        for (int i = 0; i < timeout; i++) {
-            try {
-                element.click();
-                return;
-            } catch (WebDriverException e) {
-                waitFor(1);
-            }
-        }
-    }
-
-    /**
-     * executes the given JavaScript command on given web element
-     *
-     * @param element
-     */
-    public static void executeJScommand(WebElement element, String command) {
-        JavascriptExecutor jse = (JavascriptExecutor) Driver.get();
-        jse.executeScript(command, element);
-
-    }
-
-    /**
-     * executes the given JavaScript command on given web element
-     *
-     * @param command
-     */
-    public static void executeJScommand(String command) {
-        JavascriptExecutor jse = (JavascriptExecutor) Driver.get();
-        jse.executeScript(command);
-
-    }
-
-
-    /*
-    * gets the title of the page
-    * */
-    public static String getTitle(){
-
-        return Driver.get().findElement(By.tagName("title")).getText();
-    }
-
 }

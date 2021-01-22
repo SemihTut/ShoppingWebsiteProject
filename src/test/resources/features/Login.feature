@@ -3,14 +3,14 @@ Feature: Users should be able to create a new account && user can login successf
   the account creation
 
   Background:
-    Given the user is on the web-page
+    Given User is on the web-page
 
   @registeredUser
   Scenario: Login as a registered user
-    When the user enter email "1sKvT@uR1.vONtD" and password ""
+    When User enters email "1sKvT@uR1.vONtD" and password ""
     Then User should be logged in
 
-  @TC1 @newAccount
+  @TC1
   Scenario Outline: User should create a new account and login with credentials
     When the user enter emailAddress "1"
     And Click the create an account button
@@ -26,6 +26,6 @@ Feature: Users should be able to create a new account && user can login successf
 
   @failedTest
   Scenario: Login as a registered user
-    When the user enter email "semih" and password "Asli"
+    When User enters email "semih" and password "Asli"
     Then User should be logged in
 

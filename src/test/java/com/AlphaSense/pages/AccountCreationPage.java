@@ -126,7 +126,6 @@ public class AccountCreationPage extends BasePage{
         mobilePhone.sendKeys(mobilePhoneStr);
         aliasAddress.sendKeys(aliasAddressStr);
 
-
     }
 
     public String passwordGenerate(){
@@ -134,6 +133,7 @@ public class AccountCreationPage extends BasePage{
 
     }
 
+    //if needed
     public void dateOfBirth(String day,String month, String year){
         Select daySelection = new Select(dropdownDays);
         Select monthSelection = new Select(dropdownMonths);
@@ -142,37 +142,6 @@ public class AccountCreationPage extends BasePage{
         daySelection.selectByVisibleText(day);
         monthSelection.selectByVisibleText(month);
         yearSelection.selectByVisibleText(year);
-    }
-
-    public void selectAnyOptionByValue(String option){
-        Select opt= new Select(state);
-        opt.selectByValue(option);
-
-    }
-
-    // this method check id the email that is automatically wriiten is equal with the email
-    public void checkEmail(String email){
-
-        Assert.assertEquals(newAccountPageEmail.getAttribute("value"),email);
-    }
-
-
-    /**
-     * Checks or unchecks given checkbox
-     *
-     * @param elementStr
-     * @param check
-     */
-    public static void selectCheckBox(WebElement elementStr, boolean check) {
-        if (check) {
-            if (!elementStr.isSelected()) {
-                elementStr.click();
-            }
-        } else {
-            if (elementStr.isSelected()) {
-                elementStr.click();
-            }
-        }
     }
 
 
