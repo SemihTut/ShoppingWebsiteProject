@@ -60,7 +60,7 @@ SemihTut
 
 QA Automation Engineer 
 
-https://www.linkedin.com/in/semihtut/
+https://www.linkedin.com/in/semihtut/  ||
 www.semihtut.com
 
 
