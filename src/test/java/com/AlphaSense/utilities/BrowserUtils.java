@@ -14,28 +14,13 @@ import java.util.List;
 public class BrowserUtils {
 
     /**
-     * Switches to new window by the exact title. Returns to original window if target title not found
-     * @param targetTitle
-     */
-    public static void switchToWindow(String targetTitle) {
-        String origin = Driver.get().getWindowHandle();
-        for (String handle : Driver.get().getWindowHandles()) {
-            Driver.get().switchTo().window(handle);
-            if (Driver.get().getTitle().equals(targetTitle)) {
-                return;
-            }
-        }
-        Driver.get().switchTo().window(origin);
-    }
-
-    /**
      * Moves the mouse to given element
      *
      * @param element on which to hover
      */
     public static void hover(WebElement element) {
         Actions actions = new Actions(Driver.get());
-        actions.moveToElement(element).perform();
+        actions.moveToElement(element).build().perform();
     }
 
     /**
@@ -52,22 +37,6 @@ public class BrowserUtils {
         return elemTexts;
     }
 
-    /**
-     * Extracts text from list of elements matching the provided locator into new List<String>
-     *
-     * @param locator
-     * @return list of strings
-     */
-    public static List<String> getElementsText(By locator) {
-
-        List<WebElement> elems = Driver.get().findElements(locator);
-        List<String> elemTexts = new ArrayList<>();
-
-        for (WebElement el : elems) {
-            elemTexts.add(el.getText());
-        }
-        return elemTexts;
-    }
 
     /**
      * Performs a pause
@@ -94,17 +63,6 @@ public class BrowserUtils {
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    /**
-     * Waits for element matching the locator to be visible on the page
-     *
-     * @param locator
-     * @param timeout
-     * @return
-     */
-    public static WebElement waitForVisibility(By locator, int timeout) {
-        WebDriverWait wait = new WebDriverWait(Driver.get(), timeout);
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
 
     /**
      * Waits for provided element to be clickable
@@ -116,18 +74,6 @@ public class BrowserUtils {
     public static WebElement waitForClickablility(WebElement element, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.get(), timeout);
         return wait.until(ExpectedConditions.elementToBeClickable(element));
-    }
-
-    /**
-     * Waits for element matching the locator to be clickable
-     *
-     * @param locator
-     * @param timeout
-     * @return
-     */
-    public static WebElement waitForClickablility(By locator, int timeout) {
-        WebDriverWait wait = new WebDriverWait(Driver.get(), timeout);
-        return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
     /**
@@ -146,22 +92,6 @@ public class BrowserUtils {
             wait.until(expectation);
         } catch (Throwable error) {
             error.printStackTrace();
-        }
-    }
-
-    /**
-     * Verifies whether the element matching the provided locator is displayed on page
-     *
-     * @param by
-     * @throws AssertionError if the element matching the provided locator is not found or not displayed
-     */
-    public static void verifyElementDisplayed(By by) {
-        try {
-            Assert.assertTrue("Element not visible: " + by, Driver.get().findElement(by).isDisplayed());
-        } catch (NoSuchElementException e) {
-            e.printStackTrace();
-            Assert.fail("Element not found: " + by);
-
         }
     }
 
@@ -228,26 +158,6 @@ public class BrowserUtils {
         new Actions(Driver.get()).doubleClick(element).build().perform();
     }
 
-    /**
-     * Changes the HTML attribute of a Web Element to the given value using JavaScript
-     *
-     * @param element
-     * @param attributeName
-     * @param attributeValue
-     */
-    public static void setAttribute(WebElement element, String attributeName, String attributeValue) {
-        ((JavascriptExecutor) Driver.get()).executeScript("arguments[0].setAttribute(arguments[1], arguments[2]);", element, attributeName, attributeValue);
-    }
-
-    /**
-     * Highlighs an element by changing its background and border color
-     * @param element
-     */
-    public static void highlight(WebElement element) {
-        ((JavascriptExecutor) Driver.get()).executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
-        waitFor(1);
-        ((JavascriptExecutor) Driver.get()).executeScript("arguments[0].removeAttribute('style', 'background: yellow; border: 2px solid red;');", element);
-    }
 
     /**
      * Checks or unchecks given checkbox
@@ -307,46 +217,11 @@ public class BrowserUtils {
     }
 
 
-    /**
-     * This method will recover in case of exception after unsuccessful the click,
-     * and will try to click on element again.
-     *
-     * @param by
-     * @param attempts
-     */
-    public static void clickWithWait(By by, int attempts) {
-        int counter = 0;
-        //click on element as many as you specified in attempts parameter
-        while (counter < attempts) {
-            try {
-                //selenium must look for element again
-                clickWithJS(Driver.get().findElement(by));
-                //if click is successful - then break
-                break;
-            } catch (WebDriverException e) {
-                //if click failed
-                //print exception
-                //print attempt
-                e.printStackTrace();
-                ++counter;
-                //wait for 1 second, and try to click again
-                waitFor(1);
-            }
-        }
-    }
-
-    /**
-     *  checks that an element is present on the DOM of a page. This does not
-     *    * necessarily mean that the element is visible.
-     * @param by
-     * @param time
-     */
-    public static void waitForPresenceOfElement(By by, long time) {
-        new WebDriverWait(Driver.get(), time).until(ExpectedConditions.presenceOfElementLocated(by));
-    }
-
-
+    /*
+    * gets the title of the page
+    * */
     public static String getTitle(){
+
         return Driver.get().findElement(By.tagName("title")).getText();
     }
 

@@ -18,6 +18,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Driver {
+
+    //Singleton pattern
     private Driver() {
     }
     // InheritableThreadLocal  --> this is like a container, bag, pool.
@@ -70,7 +72,7 @@ public class Driver {
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.setCapability("platform", Platform.ANY);
                     try {
-                        driverPool.set(new RemoteWebDriver(new URL("https://ec2-184-73-150-176.compute-1.amazonaws.com/wd/hub"),chromeOptions));
+                        driverPool.set(new RemoteWebDriver(new URL("https://youraddress"),chromeOptions));
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }

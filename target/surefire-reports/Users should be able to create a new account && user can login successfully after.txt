@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: Users should be able to create a new account && user can login successfully after
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 62.481 s - in Users should be able to create a new account && user can login successfully after

@@ -25,7 +25,9 @@ public class ConfigurationReader {
         }
     }
 
+    //to get the value from .properties file
     public static String get(String keyName) {
+
         return properties.getProperty(keyName);
     }
 

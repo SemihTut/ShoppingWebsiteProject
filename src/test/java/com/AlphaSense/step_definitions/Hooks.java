@@ -2,7 +2,6 @@ package com.AlphaSense.step_definitions;
 
 
 import com.AlphaSense.utilities.ConfigurationReader;
-import com.AlphaSense.utilities.DBUtils;
 import com.AlphaSense.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -18,11 +17,7 @@ public class Hooks {
     @Before
     public void setUp(){
         System.out.println("\tthis is coming from BEFORE");
-
         String browser = ConfigurationReader.get("browser");
-       if(!browser.contains("mobile")){
-        Driver.get().manage().window().maximize();
-       }
         Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }

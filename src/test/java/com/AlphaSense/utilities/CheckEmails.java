@@ -9,7 +9,6 @@ public class CheckEmails {
 
         if(EmailReader.get(email) != null){
             ConfigurationReader.get(email);
-            System.out.println("I used library");
         }else{
             EmailReader.setProperties(email,"");
         }

@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: User should search the products and the results should be responsive
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 17.278 s <<< FAILURE! - in User should search the products and the results should be responsive
+User should be able to search item on website(User should search the products and the results should be responsive)  Time elapsed: 17.278 s  <<< FAILURE!
+java.lang.AssertionError
+
