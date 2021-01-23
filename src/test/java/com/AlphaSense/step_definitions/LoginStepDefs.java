@@ -27,8 +27,13 @@ public class LoginStepDefs {
 
     @When("User enters email {string} and password {string}")
     public void the_user_enter_and(String email, String password) {
-        emailGlobal=email;
-        loginPage.loginForRegisteredUser(emailGlobal, EmailReader.get(emailGlobal));
+        if(email.isEmpty()){
+            loginPage.loginForRegisteredUser(emailGlobal, EmailReader.get(emailGlobal));
+        }else{
+            loginPage.loginForRegisteredUser(email, EmailReader.get(email));
+        }
+
+
 
 
     }

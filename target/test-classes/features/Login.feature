@@ -7,7 +7,7 @@ Feature: Users should be able to create a new account && user can login successf
 
   @registeredUser
   Scenario: Login as a registered user
-    When User enters email "1sKvT@uR1.vONtD" and password ""
+    When User enters email "Yt@hcFRy-.pfa" and password ""
     Then User should be logged in
 
   @TC1

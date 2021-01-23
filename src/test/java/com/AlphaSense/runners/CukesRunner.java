@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/features/",
         glue = "com/AlphaSense/step_definitions",
-        tags = "@TC1",
+        tags = "@smoke",
         dryRun = false
 
         )
