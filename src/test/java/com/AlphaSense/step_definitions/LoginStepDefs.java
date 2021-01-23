@@ -27,11 +27,9 @@ public class LoginStepDefs {
 
     @When("User enters email {string} and password {string}")
     public void the_user_enter_and(String email, String password) {
-        if (password.isEmpty()) {
-            loginPage.loginForRegisteredUser(email, EmailReader.get(email));
-        } else {
-            loginPage.loginForRegisteredUser(email, password);
-        }
+        emailGlobal=email;
+        loginPage.loginForRegisteredUser(emailGlobal, EmailReader.get(emailGlobal));
+
 
     }
 
@@ -82,9 +80,17 @@ public class LoginStepDefs {
     public void user_should_be_logged_in() {
         BrowserUtils.waitForVisibility(dashboardPage.pageHeading, 3);
         String actual = dashboardPage.pageHeading.getText();
-        String expected = "MY ACCOUNT";
-        Assert.assertEquals(actual,expected);
+        String expected = "MY";
+        Assert.assertTrue(actual.contains(expected));
 
     }
+
+    @Then("User should be logged out")
+    public void user_should_be_logged_out() {
+        BrowserUtils.waitForVisibility(dashboardPage.logout,3);
+        dashboardPage.logout.click();
+    }
+
+
 
 }

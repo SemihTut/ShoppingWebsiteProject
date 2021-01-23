@@ -36,6 +36,9 @@ public abstract class BasePage {
     @FindBy(className = "heading-counter")
     public WebElement itemsCount;
 
+    @FindBy(css = ".logout")
+    public WebElement logout;
+
 
     public void clickLink(String link){
         Driver.get().findElement(By.cssSelector("a[title='"+link+"']")).click();
