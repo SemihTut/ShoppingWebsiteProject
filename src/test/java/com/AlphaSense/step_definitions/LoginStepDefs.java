@@ -81,6 +81,9 @@ public class LoginStepDefs {
     @Then("User should be logged in")
     public void user_should_be_logged_in() {
         BrowserUtils.waitForVisibility(dashboardPage.pageHeading, 3);
+        String actual = dashboardPage.pageHeading.getText();
+        String expected = "MY ACCOUNT";
+        Assert.assertEquals(actual,expected);
 
     }
 

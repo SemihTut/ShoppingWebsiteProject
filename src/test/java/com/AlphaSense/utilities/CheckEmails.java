@@ -8,7 +8,7 @@ public class CheckEmails {
     public static void checkingEmail(String email){
 
         if(EmailReader.get(email) != null){
-            ConfigurationReader.get(email);
+            EmailReader.get(email);
         }else{
             EmailReader.setProperties(email,"");
         }
