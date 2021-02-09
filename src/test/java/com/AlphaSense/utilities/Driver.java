@@ -20,15 +20,25 @@ import java.net.URL;
 public class Driver {
 
     //Singleton pattern
+    /*
+    to use the same object everywhere
+    When we develop a class in such a way that it can have only instance at any time,
+    is called Singleton design pattern. It is very useful when you need to use same object of a class
+    across all classes or framework.
+    Singleton class must return the same instance again, if it is instantiated again.
+     */
     private Driver() {
     }
     // InheritableThreadLocal  --> this is like a container, bag, pool.
     // in this pool we can have separate objects for each thread
     // for each thread, in InheritableThreadLocal we can have separate object for that thread
     // driver class will provide separate webdriver object per thread
+    //We are still using singleton but every thread has their own singleton web driver object.
     private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
+
     public static WebDriver get() {
         //if this thread doesn't have driver - create it and add to pool
+
         if (driverPool.get() == null) {
 //            if we pass the driver from terminal then use that one
 //           if we do not pass the driver from terminal then use the one properties file

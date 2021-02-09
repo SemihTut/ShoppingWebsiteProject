@@ -7,7 +7,7 @@ import java.io.OutputStream;
 import java.util.Properties;
 
 /**
- * reads the properties file configuration.properties
+ * reads the properties file emails.properties
  */
 public class EmailReader {
 

@@ -43,7 +43,7 @@ public class LoginPage extends BasePage{
         createAccountBtn.click();
     }
 
-    public void createNewAccount(String firstName,String lastName,String password,String address,
+    public void createNewAccount(String firstName,String lastName,String address,
                                  String city, String state, String country,String mobilePhone, String aliasAddress){
 
 

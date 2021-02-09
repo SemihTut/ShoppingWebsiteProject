@@ -31,10 +31,8 @@ public class LoginStepDefs {
             loginPage.loginForRegisteredUser(emailGlobal, EmailReader.get(emailGlobal));
         }else{
             loginPage.loginForRegisteredUser(email, EmailReader.get(email));
+            System.out.println("EmailReader.get(email) = " + EmailReader.get(email));
         }
-
-
-
 
     }
 
@@ -83,7 +81,7 @@ public class LoginStepDefs {
 
     @Then("User should be logged in")
     public void user_should_be_logged_in() {
-        BrowserUtils.waitForVisibility(dashboardPage.pageHeading, 3);
+        BrowserUtils.waitForVisibility(dashboardPage.pageHeading, 5);
         String actual = dashboardPage.pageHeading.getText();
         String expected = "MY";
         Assert.assertTrue(actual.contains(expected));

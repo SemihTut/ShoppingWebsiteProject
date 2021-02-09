@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+        //After every run cucumber will generate a json report called cucumber.json in target folder
         plugin = {"json:target/cucumber.json",
                 "html:target/default-html-reports",
                 "rerun:target/rerun.txt"},
@@ -14,6 +15,7 @@ import org.junit.runner.RunWith;
         glue = "com/AlphaSense/step_definitions",
         tags = "@smoke",
         dryRun = false
+
 
         )
 public class CukesRunner {

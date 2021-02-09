@@ -25,7 +25,7 @@ public class PDFDownloadStepDef {
 
     @Then("User should make sure that the PDF is downloaded")
     public void user_should_make_sure_that_the_PDF_is_downloaded() {
-        System.out.println("Befor click the download " + Driver.get().getWindowHandles().size());
+        System.out.println("Before click the download " + Driver.get().getWindowHandles().size());
         ordersPage.downloadPDFBtn.click();
         BrowserUtils.waitForPageToLoad(3);
         System.out.println("After click the download " + Driver.get().getWindowHandles().size());

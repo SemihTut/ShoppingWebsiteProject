@@ -7,7 +7,7 @@ Feature: Users should be able to create a new account && user can login successf
 
   @registeredUser
   Scenario: Login as a registered user
-    When User enters email "Yt@hcFRy-.pfa" and password ""
+    When User enters email "MWvAjF@hkSx.XWvmL" and password ""
     Then User should be logged in
 
   @TC1
@@ -22,9 +22,9 @@ Feature: Users should be able to create a new account && user can login successf
     Then User should be logged in
 
     Examples:
-      | firstname | lastName | address  | cityName  | stateName  | postalCode | countryName | mobile      | aliassAddress  |
-      | Hans      | Peters   | address  | cityName  | stateName  |            | United      | +4564590232 | aliassAddress  |
-      | Hansss    | Petersss | address2 | cityName2 | stateName2 |            | United2     | +4564590232 | aliassAddress2 |
+      | firstname | lastName | address | cityName | stateName | postalCode | countryName | mobile      | aliassAddress |
+      | Ahmet     | Toprak   | address | cityName | stateName |            | United      | +4444444444 | aliassAddress |
+      #| Hansss    | Petersss | address2 | cityName2 | stateName2 |            | United2     | +4564590232 | aliassAddress2 |
 
 
 
