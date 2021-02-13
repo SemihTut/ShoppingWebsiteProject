@@ -12,7 +12,9 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public abstract class BasePage {
-
+    //If a subclass constructor does not explicitly call a superclass constructor, Java will automatically
+    // call the superclass’s default constructor, or no-arg constructor,
+    // just before the code in the subclass’s constructor executes.
     public BasePage() {
 
         PageFactory.initElements(Driver.get(), this);

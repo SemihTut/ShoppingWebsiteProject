@@ -17,7 +17,6 @@ public class Hooks {
     @Before
     public void setUp(){
         System.out.println("\tthis is coming from BEFORE");
-        String browser = ConfigurationReader.get("browser");
         Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }

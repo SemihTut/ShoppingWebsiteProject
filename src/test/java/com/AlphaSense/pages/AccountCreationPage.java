@@ -97,15 +97,15 @@ public class AccountCreationPage extends BasePage{
 
 
 
+
+
     public void createNewAccount(String firstName,String lastName,String address,
                                  String cityName, String stateName, String postalCodes, String countryName,
                                  String mobilePhoneStr, String aliasAddressStr){
         //generating random zip code
         if(!postalCodes.isEmpty()){
-            System.out.println("Bos gozukmuyor ki");
             postalCode.sendKeys(postalCodes);
         }else{
-            System.out.println("Bu asamaya geldim");
             Faker faker = new Faker();
             String str = "0"+faker.address().zipCode();
             String newPostal = str.substring(0,5);
@@ -129,6 +129,11 @@ public class AccountCreationPage extends BasePage{
     }
 
     public String passwordGenerate(){
+        return PasswordGenerator.getRandomPassword(7);
+
+    }
+
+    public String passwordGenerate2(){
         return PasswordGenerator.getRandomPassword(7);
 
     }

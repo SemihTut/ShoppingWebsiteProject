@@ -10,6 +10,7 @@ public class ConfigurationReader {
 
     private static Properties properties;
 
+    //static block-run only once when a class is loaded
     static {
 
         try {
